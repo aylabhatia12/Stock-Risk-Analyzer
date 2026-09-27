@@ -225,3 +225,31 @@ plt.ylabel("Annualized Return")
 
 plt.grid(True)
 plt.show()
+
+
+
+# Correlation matrix
+correlation_matrix = np.corrcoef(
+    returns_data,
+    rowvar=False
+)
+
+plt.figure(figsize=(8, 6))
+
+plt.imshow(correlation_matrix)
+
+plt.colorbar(label="Correlation")
+
+plt.xticks(
+    range(len(tickers)),
+    tickers
+)
+
+plt.yticks(
+    range(len(tickers)),
+    tickers
+)
+
+plt.title("Stock Return Correlation Matrix")
+
+plt.show()
